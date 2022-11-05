@@ -34,7 +34,8 @@ class senhas : AppCompatActivity() {
     }
 
    private fun getUserData(){
-       dbref = FirebaseDatabase.getInstance().getReference("senhas")
+       val getUserpath = intent.getStringExtra("UserS")
+       dbref = FirebaseDatabase.getInstance().getReference("${getUserpath}")
 
        dbref.addValueEventListener(object :ValueEventListener{
            override fun onDataChange(snapshot: DataSnapshot) {
