@@ -36,8 +36,6 @@ class Cadastro : AppCompatActivity() {
 
                 if(senha == confirma){
                     firebaseAuth.createUserWithEmailAndPassword(email,senha).addOnSuccessListener {
-                        //Todo() pode dar erro aqui
-
                         val intent = Intent(this, Login::class.java )
                         startActivity(intent)
 
